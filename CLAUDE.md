@@ -2,15 +2,19 @@
 
 ## Portföy
 
-| Ticker | Şirket | Sektör |
-|--------|--------|--------|
-| PSGYO | Pasifik GYO | Gayrimenkul (GYO) |
-| EUREN | Europen Endüstri | İnşaat / Sanayi |
-| PATEK | Pasifik Teknoloji | Teknoloji / Savunma |
-| MOPAS | Mopaş Marketcilik | Perakende / Gıda |
-| GWIND | Galata Wind Enerji | Yenilenebilir Enerji |
-| KLKIM | Kalekim Kimyevi | İnşaat Malzemeleri |
-| KCHOL | Koç Holding | Holding / Çeşitlendirilmiş |
+| Ticker | Şirket | Sektör | Adet | Ort. Maliyet | Son Fiyat | Değer (TL) | K/Z (TL) | K/Z (%) |
+|--------|--------|--------|------|-------------|-----------|-----------|----------|---------|
+| PSGYO | Pasifik GYO | Gayrimenkul (GYO) | 11.454 | 2,62 TL | 3,11 TL | 35.621,94 | +5.612,46 | +18,70 |
+| PATEK | Pasifik Teknoloji | Teknoloji / Savunma | 721 | 18,53 TL | 25,74 TL | 18.558,54 | +5.198,41 | +38,91 |
+| GWIND | Galata Wind Enerji | Yenilenebilir Enerji | 161 | 25,28 TL | 27,10 TL | 4.363,10 | +293,02 | +7,20 |
+| MOPAS | Mopaş Marketcilik | Perakende / Gıda | 51 | 39,78 TL | 41,00 TL | 2.091,00 | +62,22 | +3,07 |
+| AEFES | Anadolu Efes | Tüketici / Bira | 65 | 19,72 TL | 19,98 TL | 1.298,70 | +16,90 | +1,32 |
+| KLKIM | Kalekim Kimyevi | İnşaat Malzemeleri | 40 | 34,52 TL | 32,08 TL | 1.283,20 | -97,60 | -7,07 |
+| ISCTR | İş Bankası C | Bankacılık | 89 | 14,49 TL | 13,46 TL | 1.197,94 | -91,67 | -7,11 |
+
+**Toplam Portföy Değeri: 64.414,42 TL**
+**Net K/Z: +10.992,74 TL**
+**Son Güncelleme: 2 Haziran 2026**
 
 ---
 
