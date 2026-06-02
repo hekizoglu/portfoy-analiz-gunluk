@@ -83,9 +83,31 @@ Kullanıcı portföy analizi istediğinde aşağıdaki adımların TAMAMINI uygu
 - Fed FOMC toplantı tarihi
 - Türkiye Hazine ihale takvimi
 
-### 10. Banka Değerleme Tabloları (Haftalık)
-- Oyak Yatırım, İş Yatırım, Garanti BBVA Yatırım araştırma raporlarından güncel hedef fiyat ve tavsiye tablosu
-- Portföy hisselerine yönelik yeni rapor/revizyon var mı?
+### 10. Aracı Kurum Değerleme Tabloları (Haftalık)
+
+Aşağıdaki 6 kurumun tamamını tara; portföy hisseleri için hedef fiyat ve tavsiye tablosu oluştur:
+
+| Kurum | Tarama Odağı |
+|-------|-------------|
+| **Oyak Yatırım** | Model portföy giriş/çıkış, hedef fiyat revizyonu |
+| **Garanti BBVA Yatırım** | Strateji raporu, sektör ağırlıkları |
+| **İş Yatırım** | En çok önerilenler listesi değişiklikleri |
+| **Ak Yatırım** | Model portföy güncellemesi |
+| **Deniz Yatırım** | Haftalık bülten (paraborsa.net üzerinden) |
+| **Yapı Kredi Yatırım** | Model portföy bülteni |
+
+- Her kurumun portföy hisselerine yönelik güncel hedef fiyat ve tavsiyesini tablola
+- Yeni rapor/revizyon var mı? Yukarı/aşağı mı?
+- Kaç kurum "AL", kaç kurum "TUT", kaç kurum "SAT" diyor? (konsensüs tablosu)
+
+### 11. Portföy Dışı Fırsat Taraması (Haftalık)
+- Birden fazla kurumun model portföyünde eş zamanlı yer alan ve mevcut portföyde bulunmayan hisseleri tespit et
+- Güçlü alım konsensüsü olan hisseleri şu kriterlere göre sırala:
+  - Kaç kurumun portföyünde var?
+  - Analist hedef fiyat potansiyeli (%)
+  - Sektörel çeşitlendirme katkısı
+- En az 2 kurumda yer alan fırsat hisselerini "Watchlist Önerisi" olarak raporla
+- Öncelikli izleme listesi: THYAO, BIMAS, TAVHL, ASELSAN, EKGYO, YKBNK, CCOLA, MGROS, MPARK, ASTOR
 
 ---
 
