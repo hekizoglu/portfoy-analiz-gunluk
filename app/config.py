@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 import os
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 def _parse_dotenv(path: Path) -> dict[str, str]:
@@ -64,3 +66,45 @@ class TelegramConfig:
             raise ValueError("Missing TELEGRAM_BOT_TOKEN.")
         if not self.chat_id:
             raise ValueError("Missing TELEGRAM_CHAT_ID.")
+
+
+@dataclass(slots=True)
+class AiTaskRunnerConfig:
+    provider: str
+    api_key: str
+    base_url: str
+    model: str
+    deepseek_offpeak_only: bool
+    deepseek_timezone: str
+
+    @classmethod
+    def from_env(cls, base_dir: Path | None = None) -> "AiTaskRunnerConfig":
+        data = load_config_map(base_dir)
+        return cls(
+            provider=data.get("AI_TASK_RUNNER_PROVIDER", "").strip().lower(),
+            api_key=data.get("AI_TASK_RUNNER_API_KEY", ""),
+            base_url=data.get("AI_TASK_RUNNER_BASE_URL", ""),
+            model=data.get("AI_TASK_RUNNER_MODEL", ""),
+            deepseek_offpeak_only=_parse_bool(data.get("DEEPSEEK_OFFPEAK_ONLY"), default=True),
+            deepseek_timezone=data.get("DEEPSEEK_TIMEZONE", "Europe/Istanbul"),
+        )
+
+    def is_configured(self) -> bool:
+        return bool(self.provider and self.api_key and self.base_url and self.model)
+
+    def current_local_hour(self) -> int:
+        tz = ZoneInfo(self.deepseek_timezone)
+        return datetime.now(tz).hour
+
+    def is_deepseek_peak_window(self) -> bool:
+        if self.provider != "deepseek":
+            return False
+        hour = self.current_local_hour()
+        return (4 <= hour < 7) or (9 <= hour < 13)
+
+    def should_run_now(self) -> bool:
+        if self.provider != "deepseek":
+            return True
+        if not self.deepseek_offpeak_only:
+            return True
+        return not self.is_deepseek_peak_window()

@@ -35,6 +35,20 @@ Pipeline step'leri veya zamanlama degistikce guncellenir.
 - Telegram cycle report: config varsa her cycle sonunda gonderilir
 - Commit/push: dosya degisti ise her cycle sonunda denenir
 
+## DeepSeek off-peak schedule (Turkey time)
+Kullanici tarafindan verilen fiyat bilgisine gore DeepSeek peak saatleri TRT ile:
+- `04:00-07:00`
+- `09:00-13:00`
+
+Off-peak calisma araliklari:
+- `00:00-03:59`
+- `07:00-08:59`
+- `13:00-23:59`
+
+Eger `AI_TASK_RUNNER_PROVIDER=deepseek` ve `DEEPSEEK_OFFPEAK_ONLY=true` ise:
+- PowerShell loop peak saatlerde AI task-runner cycle'larini atlar
+- Cron ornekleri off-peak dakikalara gore ayarlanir
+
 ## Daily schedule
 - `08:45` data pull
 - `09:05` validation

@@ -26,6 +26,7 @@ Dongu davranisi veya cadence degistikce guncellenir.
 - Her cycle tek bir bounded is parcasi yapar
 - Her cycle sonunda Telegram status raporu uretir
 - Dosya degisikligi varsa commit/push dener
+- `AI_TASK_RUNNER_PROVIDER=deepseek` ve `DEEPSEEK_OFFPEAK_ONLY=true` ise TRT peak saatlerinde cycle `SKIPPED_DEEPSEEK_PEAK_WINDOW` olarak raporlanir
 
 ## Cycle order
 1. Config yukle

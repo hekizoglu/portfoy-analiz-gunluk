@@ -43,6 +43,14 @@ Bu sayede:
 - `TELEGRAM_PROGRESS_THREAD_ID`
 - `TELEGRAM_PARSE_MODE`
 
+## Required AI task runner keys
+- `AI_TASK_RUNNER_PROVIDER`
+- `AI_TASK_RUNNER_API_KEY`
+- `AI_TASK_RUNNER_BASE_URL`
+- `AI_TASK_RUNNER_MODEL`
+- `DEEPSEEK_OFFPEAK_ONLY`
+- `DEEPSEEK_TIMEZONE`
+
 ## Repository rule
 - `.env` ve `.env.local` git'e eklenmez
 - Gercek token sadece local environment veya secret manager'da tutulur
@@ -58,6 +66,12 @@ TELEGRAM_BOT_TOKEN=REPLACE_WITH_REAL_TOKEN
 TELEGRAM_CHAT_ID=-5434687426
 TELEGRAM_PROGRESS_THREAD_ID=
 TELEGRAM_PARSE_MODE=Markdown
+AI_TASK_RUNNER_PROVIDER=deepseek
+AI_TASK_RUNNER_API_KEY=REPLACE_WITH_REAL_TOKEN
+AI_TASK_RUNNER_BASE_URL=https://api.deepseek.com
+AI_TASK_RUNNER_MODEL=deepseek-chat
+DEEPSEEK_OFFPEAK_ONLY=true
+DEEPSEEK_TIMEZONE=Europe/Istanbul
 ```
 
 ### Temporary PowerShell override
@@ -88,6 +102,14 @@ Gelecekte eklenecek tum runtime kodlari su kurala uymalidir:
 - Sonra varsa `.env` oku
 - Eksik zorunlu alan varsa fail-fast yap
 - Secret degerleri loglama
+
+## DeepSeek pricing window rule
+Kullanici tarafindan verilen fiyat bilgisine gore DeepSeek peak saatleri Türkiye saatiyle `04:00-07:00` ve `09:00-13:00` araligidir.
+
+Bu repo icinde:
+- `DEEPSEEK_OFFPEAK_ONLY=true` ise AI task-runner bu saatlerde calismaz
+- Off-peak saatler: `00:00-03:59`, `07:00-08:59`, `13:00-23:59`
+- Zaman dilimi `DEEPSEEK_TIMEZONE=Europe/Istanbul` olarak kabul edilir
 
 ## Fail-fast rules
 - `TELEGRAM_ENABLED=true` ise `TELEGRAM_BOT_TOKEN` ve `TELEGRAM_CHAT_ID` zorunludur

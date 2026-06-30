@@ -1,0 +1,13 @@
+# Europe/Istanbul timezone is assumed for these examples.
+# Run every 10 minutes only in off-peak windows for DeepSeek pricing.
+
+CRON_TZ=Europe/Istanbul
+
+# 00:00-03:59 TRT
+*/10 0-3 * * * cd /repo/degerleme-tablosu-gunluk && python scripts/run_cycle.py --pdf /data/oyak.pdf --send-telegram --commit-push
+
+# 07:00-08:59 TRT
+*/10 7-8 * * * cd /repo/degerleme-tablosu-gunluk && python scripts/run_cycle.py --pdf /data/oyak.pdf --send-telegram --commit-push
+
+# 13:00-23:59 TRT
+*/10 13-23 * * * cd /repo/degerleme-tablosu-gunluk && python scripts/run_cycle.py --pdf /data/oyak.pdf --send-telegram --commit-push

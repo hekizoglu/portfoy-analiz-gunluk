@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app.config import TelegramConfig
+from app.config import AiTaskRunnerConfig, TelegramConfig
 from app.roadmap import find_next_todo_task
 from app.telegram_client import TelegramClient
 
@@ -50,11 +50,15 @@ def main() -> int:
 
     next_task = find_next_todo_task(ROOT / "ROADMAP.md")
     next_task_id = next_task.task_id if next_task else "NO_TODO"
+    ai_cfg = AiTaskRunnerConfig.from_env(ROOT)
 
     pipeline_status = "SKIPPED_NO_PDF"
     draft_status = "SKIPPED"
 
-    if args.pdf:
+    if ai_cfg.provider == "deepseek" and not ai_cfg.should_run_now():
+        pipeline_status = "SKIPPED_DEEPSEEK_PEAK_WINDOW"
+        draft_status = "SKIPPED_PRICING_WINDOW"
+    elif args.pdf:
         code, stdout, stderr = _run(
             "scripts/parse_oyak_pdf.py",
             "--input",
@@ -123,7 +127,7 @@ def main() -> int:
         )
         git_status = (proc.stdout.strip() or proc.stderr.strip() or f"RC={proc.returncode}")
 
-    print(json.dumps({"cycle_report": str(cycle_path), "next_task_id": next_task_id, "telegram_status": telegram_status, "git_status": git_status}, ensure_ascii=False))
+    print(json.dumps({"cycle_report": str(cycle_path), "next_task_id": next_task_id, "telegram_status": telegram_status, "git_status": git_status, "ai_provider": ai_cfg.provider or "unset"}, ensure_ascii=False))
     return 0
 
 
