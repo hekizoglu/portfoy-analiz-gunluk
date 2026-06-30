@@ -1,0 +1,72 @@
+{
+  "report_date": "2026-06-29",
+  "source_count": 1,
+  "valid_row_count": 42,
+  "manual_review_count": 0,
+  "top_candidates": [
+    {
+      "ticker": "ALBRK",
+      "broker_count": 1,
+      "average_target_price": 13.85,
+      "consensus_note": "Kurum raporlarina gore one cikan",
+      "final_score": 100,
+      "risk_label": "MANUAL_CONTROL",
+      "report_date": "2026-06-29"
+    },
+    {
+      "ticker": "ISMEN",
+      "broker_count": 1,
+      "average_target_price": 71.4,
+      "consensus_note": "Kurum raporlarina gore one cikan",
+      "final_score": 100,
+      "risk_label": "MANUAL_CONTROL",
+      "report_date": "2026-06-29"
+    },
+    {
+      "ticker": "PGSUS",
+      "broker_count": 1,
+      "average_target_price": 342.0,
+      "consensus_note": "Kurum raporlarina gore one cikan",
+      "final_score": 100,
+      "risk_label": "MANUAL_CONTROL",
+      "report_date": "2026-06-29"
+    },
+    {
+      "ticker": "HTTBT",
+      "broker_count": 1,
+      "average_target_price": 68.64,
+      "consensus_note": "Kurum raporlarina gore one cikan",
+      "final_score": 100,
+      "risk_label": "MANUAL_CONTROL",
+      "report_date": "2026-06-29"
+    },
+    {
+      "ticker": "GLRMK",
+      "broker_count": 1,
+      "average_target_price": 326.4,
+      "consensus_note": "Kurum raporlarina gore one cikan",
+      "final_score": 100,
+      "risk_label": "MANUAL_CONTROL",
+      "report_date": "2026-06-29"
+    }
+  ],
+  "anomalies": [
+    {
+      "message": "ALBRK icin tek kurumdan gelen %71 pozitif ayrisma, manuel kontrol gerekir."
+    },
+    {
+      "message": "ISMEN icin tek kurumdan gelen %95 pozitif ayrisma, manuel kontrol gerekir."
+    },
+    {
+      "message": "PGSUS icin tek kurumdan gelen %93 pozitif ayrisma, manuel kontrol gerekir."
+    },
+    {
+      "message": "HTTBT icin tek kurumdan gelen %72 pozitif ayrisma, manuel kontrol gerekir."
+    },
+    {
+      "message": "GLRMK icin tek kurumdan gelen %90 pozitif ayrisma, manuel kontrol gerekir."
+    }
+  ],
+  "revisions": [],
+  "manual_reviews": []
+}

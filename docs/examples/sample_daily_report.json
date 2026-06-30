@@ -1,0 +1,48 @@
+{
+  "report_date": "2026-06-30",
+  "source_count": 1,
+  "valid_row_count": 8,
+  "manual_review_count": 2,
+  "top_candidates": [
+    {
+      "ticker": "THYAO",
+      "broker_count": 4,
+      "average_target_price": 128,
+      "consensus_note": "Konsensusten pozitif ayrisan",
+      "final_score": 78,
+      "risk_label": "MANUAL_CONTROL",
+      "report_date": "2026-06-30"
+    },
+    {
+      "ticker": "BIMAS",
+      "broker_count": 3,
+      "average_target_price": 645,
+      "consensus_note": "Kurum raporlarina gore one cikan",
+      "final_score": 74,
+      "risk_label": "STALE_TARGET",
+      "report_date": "2026-06-30"
+    }
+  ],
+  "anomalies": [
+    {
+      "message": "THYAO icin konsensusten %12 pozitif ayrisan yeni rapor, manuel kontrol gerekir."
+    }
+  ],
+  "revisions": [
+    {
+      "message": "BIMAS icin son 30 gunde tekrar eden yukari yonlu hedef fiyat revizyonu izlendi."
+    }
+  ],
+  "manual_reviews": [
+    {
+      "ticker": "XYZAO",
+      "reason": "Tek kurum verisine dayaniyor",
+      "risk_label": "SINGLE_BROKER"
+    },
+    {
+      "ticker": "ABCAO",
+      "reason": "Para birimi belirsiz",
+      "risk_label": "SOURCE_CHECK_REQUIRED"
+    }
+  ]
+}

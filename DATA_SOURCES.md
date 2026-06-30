@@ -1,0 +1,79 @@
+# DATA_SOURCES
+
+## Purpose
+Veri kaynaklarinin erisim, risk ve parsing acisindan resmi katalogu.
+
+## When to read this file
+Yeni kaynak eklerken, adapter tasarlarken ve compliance riski degerlendirirken.
+
+## What it controls
+Kaynak onceligi, erisim varsayimlari, gerekli alanlar ve ToS sinirlari.
+
+## What it must not contain
+Yetkisiz scraping talimati, credential, calisan parser kodu.
+
+## Related files
+`PARSING_RULES.md`, `COMPLIANCE.md`, `docs/source_adapters/oyak_valuation_table.md`
+
+## Update rules
+Her yeni kaynak veya format degisikliginde guncellenir.
+
+## Last updated
+2026-06-30
+
+## Global rule
+Login-protected, ucretli veya yetki gerektiren veriler; kullanici yasal erisim ve acik konfigurasyon saglamadan scrape edilmez veya otomatik islenmez.
+
+## Source catalog
+
+### OYAK Yatirim valuation table
+- Source name: `OYAK Yatirim valuation table`
+- Type: `PDF or HTML bulletin/table`
+- Access method: Kamuya acik web sayfasi veya indirilebilir gunluk rapor baglantisi varsayimi; canli entegrasyon oncesi manuel URL dogrulamasi gerekir.
+- Authentication requirement: `None assumed for MVP`
+- Parsing difficulty: `Medium-High`
+- Reliability: `High if official source file is archived with hash`
+- Update frequency: `Daily or report-driven`
+- Legal/ToS risk: `Medium` - resmi yayin kullanim kosullari canli entegrasyon oncesi kontrol edilmeli.
+- Required fields:
+  - `ticker`
+  - `company_name`
+  - `broker`
+  - `report_date`
+  - `recommendation_raw`
+  - `target_price`
+  - `current_price_reported`
+  - `upside_reported`
+  - `currency`
+  - `source_url`
+  - `source_file_hash`
+- MVP priority: `P0`
+- Adapter notes:
+  - Her dosya once raw archive alanina kaydedilmeli.
+  - SHA-256 hash uretilmeli.
+  - Ayni hash tekrar geldiyse duplicate olarak isaretlenmeli.
+  - Tablo yapisi degisirse parser degil once adapter alarm uretmeli.
+
+### Is Yatirim takip listesi
+- Source name: `Is Yatirim takip listesi`
+- Type: `HTML/PDF`
+- Access method: Sonraki fazda arastirilacak
+- Authentication requirement: `Unknown`
+- Parsing difficulty: `Medium`
+- Reliability: `Unknown`
+- Update frequency: `Unknown`
+- Legal/ToS risk: `Unknown`
+- Required fields: MVP sonrasi tanimlanacak
+- MVP priority: `P2`
+
+### Ak Yatirim model portfoy
+- Source name: `Ak Yatirim model portfoy`
+- Type: `PDF/HTML`
+- Access method: Sonraki fazda arastirilacak
+- Authentication requirement: `Unknown`
+- Parsing difficulty: `Medium`
+- Reliability: `Unknown`
+- Update frequency: `Unknown`
+- Legal/ToS risk: `Unknown`
+- Required fields: MVP sonrasi tanimlanacak
+- MVP priority: `P2`
