@@ -85,25 +85,32 @@ def main() -> int:
                 pipeline_status = "OK" if code == 0 else f"DRAFT_FAILED: {stderr or stdout}"
                 draft_status = "READY" if code == 0 else "FAILED"
 
-    report = build_cycle_report(
-        next_task_id=next_task_id,
-        pipeline_status=pipeline_status,
-        draft_status=draft_status,
-        git_status="PENDING",
-    )
     cycle_dir = ROOT / "artifacts" / "cycle_reports"
     cycle_dir.mkdir(parents=True, exist_ok=True)
     cycle_path = cycle_dir / f"{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
-    cycle_path.write_text(report, encoding="utf-8")
 
     telegram_status = "SKIPPED"
     if args.send_telegram:
         cfg = TelegramConfig.from_env(ROOT)
         if cfg.enabled and cfg.bot_token and cfg.chat_id:
-            TelegramClient(cfg).send_markdown(report)
+            preview_report = build_cycle_report(
+                next_task_id=next_task_id,
+                pipeline_status=pipeline_status,
+                draft_status=draft_status,
+                git_status="PENDING",
+            )
+            TelegramClient(cfg).send_markdown(preview_report)
             telegram_status = "SENT"
         else:
             telegram_status = "SKIPPED_MISSING_CONFIG"
+
+    final_report = build_cycle_report(
+        next_task_id=next_task_id,
+        pipeline_status=f"{pipeline_status}; telegram={telegram_status}",
+        draft_status=draft_status,
+        git_status="PENDING_COMMIT_PUSH",
+    )
+    cycle_path.write_text(final_report, encoding="utf-8")
 
     git_status = "SKIPPED"
     if args.commit_push:
@@ -116,13 +123,6 @@ def main() -> int:
         )
         git_status = (proc.stdout.strip() or proc.stderr.strip() or f"RC={proc.returncode}")
 
-    final_report = build_cycle_report(
-        next_task_id=next_task_id,
-        pipeline_status=f"{pipeline_status}; telegram={telegram_status}",
-        draft_status=draft_status,
-        git_status=git_status,
-    )
-    cycle_path.write_text(final_report, encoding="utf-8")
     print(json.dumps({"cycle_report": str(cycle_path), "next_task_id": next_task_id, "telegram_status": telegram_status, "git_status": git_status}, ensure_ascii=False))
     return 0
 
