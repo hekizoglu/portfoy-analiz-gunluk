@@ -56,15 +56,32 @@ Login-protected, ucretli veya yetki gerektiren veriler; kullanici yasal erisim v
 
 ### Is Yatirim takip listesi
 - Source name: `Is Yatirim takip listesi`
-- Type: `HTML/PDF`
-- Access method: Sonraki fazda arastirilacak
-- Authentication requirement: `Unknown`
+- Type: `HTML/PDF/XLSX bulletin`
+- Access method: Kamuya acik arastirma veya takip listesi sayfasi uzerinden HTML tablo ya da indirilebilir dokuman varsayimi; canli entegrasyon oncesi resmi URL pattern dogrulanmali.
+- Authentication requirement: `None assumed for public research pages`
 - Parsing difficulty: `Medium`
-- Reliability: `Unknown`
-- Update frequency: `Unknown`
-- Legal/ToS risk: `Unknown`
-- Required fields: MVP sonrasi tanimlanacak
+- Reliability: `Medium-High if official page and file hash are archived`
+- Update frequency: `Daily or report-driven`
+- Legal/ToS risk: `Medium` - resmi yayin ve kullanim kosullari canli entegrasyon oncesi kontrol edilmeli.
+- Required fields:
+  - `ticker`
+  - `company_name`
+  - `broker`
+  - `report_date`
+  - `recommendation_raw`
+  - `recommendation_normalized`
+  - `target_price`
+  - `current_price_reported`
+  - `upside_reported`
+  - `currency`
+  - `source_url`
+  - `source_file_hash`
 - MVP priority: `P2`
+- Adapter notes:
+  - Public research page veya indirilen belge once raw archive alanina yazilmali.
+  - HTML tablo varsa canonical kolon map'i ile parse edilmeli; belge linki varsa OYAK benzeri hash/fingerprint akisi izlenmeli.
+  - Is Yatirim tavsiye siniflari OYAK ile birebir eslesmeyebilir; normalize sozlugu broker-bazli tutulmali.
+  - Ayni gun icindeki farkli takip listesi varyantlari duplicate degil revision olarak ele alinmali.
 
 ### Ak Yatirim model portfoy
 - Source name: `Ak Yatirim model portfoy`

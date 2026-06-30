@@ -28,6 +28,13 @@ Pipeline step'leri veya zamanlama degistikce guncellenir.
 - Cloud Run / Cloud Scheduler
 - Codex/Claude ajan kosulari
 
+## Continuous roadmap loop
+- Baslangic scripti: `scripts/start_roadmap_loop.ps1`
+- Default cadence: `10 dakika`
+- Cycle runner: `scripts/run_cycle.py`
+- Telegram cycle report: config varsa her cycle sonunda gonderilir
+- Commit/push: dosya degisti ise her cycle sonunda denenir
+
 ## Daily schedule
 - `08:45` data pull
 - `09:05` validation

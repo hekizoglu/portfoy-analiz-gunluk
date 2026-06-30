@@ -41,6 +41,10 @@ Sprint davranisi sadece bilincli surec degisikliginde guncellenir.
 ## Hard rules
 - Tek sprintte birden fazla roadmap gorevi tamamlama.
 - Dosya guncellenmediyse is yapildi deme.
-- Telegram mesaji gonderme.
+- Etkilesimli gelistirme sprintinde Telegram mesaji gonderme.
 - Yatirim tavsiyesi dili kullanma.
 - Gizli bilgi ekleme.
+
+## Scheduled loop note
+- `scripts/start_roadmap_loop.ps1` ile calisan operasyonel loop, gelistirme sprintinden ayri bir mekanizmadir.
+- Bu loop 10 dakikalik cadence ile status raporu gonderebilir ve veri artifact'lerini commit/push edebilir.

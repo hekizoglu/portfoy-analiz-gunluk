@@ -22,13 +22,13 @@ Her sprint sonunda yalnizca gecerli durum guncellenir.
 2026-06-30
 
 ## Current project state
-Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamlandi: OYAK source adapter, parser/validation kurallari, canonical veri modeli, Google Sheets MVP semasi, scoring, Telegram manuel approval formati, error/manual review queue, gunluk pipeline komut plani ve progress notification tasarimi hazir. Git deposu baslatildi. Telegram entegrasyonu icin secret-safe konfigurasyon iskeleti eklendi; varsayilan test grup chat ID'si repoya islendi. Shell-bagimsiz universal config standardi tanimlandi. Gercek OYAK PDF'sinden 42 satir parse eden runtime script eklendi, gunluk rapor JSON'u ve Telegram draft'i uretildi, dry-run dogrulandi.
+Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamlandi: OYAK source adapter, parser/validation kurallari, canonical veri modeli, Google Sheets MVP semasi, scoring, Telegram manuel approval formati, error/manual review queue, gunluk pipeline komut plani ve progress notification tasarimi hazir. Git deposu baslatildi. Telegram entegrasyonu icin secret-safe konfigurasyon iskeleti eklendi; varsayilan test grup chat ID'si repoya islendi. Shell-bagimsiz universal config standardi tanimlandi. Gercek OYAK PDF'sinden 42 satir parse eden runtime script eklendi, gunluk rapor JSON'u ve Telegram draft'i uretildi, dry-run dogrulandi. Phase 2 icin ikinci broker olarak Is Yatirim source adapter tasarimi eklendi.
 
 ## Current phase
-`Phase 1 - MVP: OYAK + Google Sheets + Telegram Manual Queue`
+`Phase 2 - Multi-Broker Consensus`
 
 ## Current sprint
-`P1-T09` tamamlandi.
+`P2-T01` tamamlandi.
 
 ## Current assumptions
 - Kaynak tasarimi bu sprintte canli site baglantisi kurmadan yapildi.
@@ -42,6 +42,7 @@ Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamla
 - Telegram gercek gonderimini `.env.local` veya aktif env ile dogrulamak
 - Sheets veya lokal kalici katmana queue yazimi eklemek
 - Tek kurum verisinden uretilen draft icin daha muhafazakar ranking/filtre eklemek
+- Is Yatirim ve Ak Yatirim kaynaklarini parser katmanina hazirlamak
 
 ## Known risks
 - OYAK formati canli dogrulama yapilmadan kesinlestirilemez.
@@ -51,7 +52,7 @@ Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamla
 - Bu shell oturumunda Telegram env veya `.env.local` gorunmedigi icin canli test gonderimi bloke.
 
 ## Next task ID
-`P2-T01`
+`P2-T02`
 
 ## Do-not-change list
 - Bu sistem yatirim tavsiyesi urunu gibi konumlandirilmayacak.

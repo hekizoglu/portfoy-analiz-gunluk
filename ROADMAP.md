@@ -150,7 +150,7 @@ Her sprint sonunda yalnizca etkilenen gorevin durumu guncellenir.
 - ID: `P2-T01`
 - Title: Add Is Yatirim source design
 - Phase: `Phase 2`
-- Status: `TODO`
+- Status: `DONE`
 - Estimated sprint count: `1`
 - Input files: `DATA_SOURCES.md`, `docs/templates/source_adapter_template.md`
 - Output files: `DATA_SOURCES.md`
