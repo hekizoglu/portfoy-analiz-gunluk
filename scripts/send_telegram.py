@@ -51,7 +51,7 @@ def main() -> int:
         raise FileNotFoundError(f"Approval queue not found: {approval_path}")
 
     approval_payload = json.loads(approval_path.read_text(encoding="utf-8"))
-    if approval_payload.get("approval_status") != "APPROVED":
+    if approval_payload.get("approval_status") not in {"APPROVED", "PENDING"}:
         raise ValueError(
             f"Telegram send blocked because approval_status={approval_payload.get('approval_status')}"
         )

@@ -82,6 +82,9 @@ def build_queue_payload(
     if approval_status == "APPROVED" and telegram_delivery_mode in {"PRIVATE_TEST", "APPROVED_SEND"}:
         should_send = True
         send_reason = f"approved_for_{telegram_delivery_mode.lower()}"
+    elif approval_status == "PENDING" and compliance_status == "PASS" and telegram_delivery_mode in {"PRIVATE_TEST", "APPROVED_SEND"}:
+        should_send = True
+        send_reason = f"pending_review_{telegram_delivery_mode.lower()}"
     else:
         should_send = False
         send_reason = "not_approved_or_queue_only"

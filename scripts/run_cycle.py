@@ -162,6 +162,7 @@ def main() -> int:
                     sent_text = False
                     doc_error = ""
                     text_error = ""
+                    approval_prefix = "APPROVED" if decision.approval_status == "APPROVED" else "PENDING"
                     if draft_path.exists():
                         try:
                             client.send_document(draft_path, caption="Gunluk rapor eki.")
@@ -175,11 +176,11 @@ def main() -> int:
                         except Exception as exc:
                             text_error = type(exc).__name__
                     if sent_doc and sent_text:
-                        telegram_status = "SENT_APPROVED_TEXT_AND_DOC"
+                        telegram_status = f"SENT_{approval_prefix}_TEXT_AND_DOC"
                     elif sent_doc:
-                        telegram_status = "SENT_APPROVED_DOC_ONLY" if not sent_text else "SENT_APPROVED_TEXT_AND_DOC"
+                        telegram_status = f"SENT_{approval_prefix}_DOC_ONLY" if not sent_text else f"SENT_{approval_prefix}_TEXT_AND_DOC"
                     elif sent_text:
-                        telegram_status = "SENT_APPROVED_TEXT_ONLY"
+                        telegram_status = f"SENT_{approval_prefix}_TEXT_ONLY"
                     else:
                         failure_bits = [bit for bit in (doc_error, text_error) if bit]
                         telegram_status = f"FAILED_{','.join(failure_bits)}" if failure_bits else "FAILED_UNKNOWN"
