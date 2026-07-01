@@ -174,7 +174,7 @@ Her sprint sonunda yalnizca etkilenen gorevin durumu guncellenir.
 - ID: `P2-T03`
 - Title: Add broker recommendation normalization dictionary
 - Phase: `Phase 2`
-- Status: `TODO`
+- Status: `DONE`
 - Estimated sprint count: `1`
 - Input files: `PARSING_RULES.md`, `DATABASE_SCHEMA.md`
 - Output files: `PARSING_RULES.md`, `DATABASE_SCHEMA.md`

@@ -39,6 +39,7 @@ Telegram kapsami veya approval modeli degistikce guncellenir.
 - `TELEGRAM_CHAT_ID`
 - `TELEGRAM_PROGRESS_THREAD_ID`
 - `TELEGRAM_PARSE_MODE`
+- `TELEGRAM_DELIVERY_MODE`
 
 ## Current configured target
 - Default test group chat ID: `-5434687426`
@@ -77,6 +78,13 @@ Telegram entegrasyonu shell-spesifik komutlara bagli degildir. Gelecekteki tum n
 - `PRIVATE_TEST`: mesaj sadece test grup veya topic'e gider
 - `APPROVAL_QUEUE_ONLY`: Telegram'a gonderim yok, sadece `08_TELEGRAM_QUEUE` tabina taslak yazar
 - `APPROVED_SEND`: yalnizca `approval_status=APPROVED` olan queue item gonderilir
+
+## AI review gate
+- Gunluk draft once iki ayri AI incelemesinden gecirilmeli
+- Birinci AI analiz, ikinci AI ise kritik kontrol yapar
+- Iki inceleme de `APPROVE` ise ve compliance checks gecerliyse queue `APPROVED` olabilir
+- AI yanitlari eksik veya okunamazsa queue `PENDING` kalir
+- `PRIVATE_TEST` modunda approved queue yine test chat'e gider; public kanal icin `APPROVED_SEND` kullanilir
 
 ## Progress notification contract
 Progress mesajlari su minimum alanlari icermelidir:

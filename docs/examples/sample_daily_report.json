@@ -7,8 +7,11 @@
     {
       "ticker": "THYAO",
       "broker_count": 4,
+      "current_price": 112.4,
       "average_target_price": 128,
+      "upside_pct": 14.0,
       "consensus_note": "Konsensusten pozitif ayrisan",
+      "catalyst": "KAP takvimi ve sektor rotasyonu",
       "final_score": 78,
       "risk_label": "MANUAL_CONTROL",
       "report_date": "2026-06-30"
@@ -16,8 +19,11 @@
     {
       "ticker": "BIMAS",
       "broker_count": 3,
+      "current_price": 596.5,
       "average_target_price": 645,
+      "upside_pct": 8.1,
       "consensus_note": "Kurum raporlarina gore one cikan",
+      "catalyst": "Reel fiyatlama ve marj koruma",
       "final_score": 74,
       "risk_label": "STALE_TARGET",
       "report_date": "2026-06-30"
@@ -44,5 +50,64 @@
       "reason": "Para birimi belirsiz",
       "risk_label": "SOURCE_CHECK_REQUIRED"
     }
+  ],
+  "source_snapshot": [
+    {
+      "name": "OYAK Yatirim",
+      "where": "https://www.oyakyatirim.com.tr/arastirma-raporlari",
+      "check": "Latest valuation table PDF",
+      "cadence": "per release"
+    },
+    {
+      "name": "KAP",
+      "where": "https://kap.org.tr/en",
+      "check": "Material events, financial statements, corporate actions",
+      "cadence": "intraday"
+    },
+    {
+      "name": "Borsa Istanbul",
+      "where": "https://www.borsaistanbul.com/en/markets/equity-market",
+      "check": "Equity market, sector flow and daily bulletin",
+      "cadence": "intraday"
+    },
+    {
+      "name": "TCMB",
+      "where": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB%2BEN/Main%2BMenu/Statistics",
+      "check": "Data release calendar, rates, exchange rates and markets data",
+      "cadence": "daily"
+    },
+    {
+      "name": "TUIK",
+      "where": "https://veriportali.tuik.gov.tr/en",
+      "check": "Inflation, industrial production and confidence releases",
+      "cadence": "calendar-driven"
+    }
+  ],
+  "market_context": [
+    {
+      "theme": "Consensus expectations",
+      "why": "Prices embed expectations, so the report should show whether the narrative is optimistic or pessimistic.",
+      "where": "Research tabs, broker revisions and market prices"
+    },
+    {
+      "theme": "Macro rates and FX",
+      "why": "Valuation multiples and risk appetite are sensitive to policy rate and TRY moves.",
+      "where": "TCMB statistics and exchange-rate pages"
+    },
+    {
+      "theme": "Sector rotation and liquidity",
+      "why": "Top names move differently from thin names; liquidity and float should affect ranking.",
+      "where": "Borsa Istanbul equity market and indices pages"
+    },
+    {
+      "theme": "Corporate events",
+      "why": "KAP disclosures can invalidate a target-price assumption very quickly.",
+      "where": "KAP material event disclosures"
+    }
+  ],
+  "next_actions": [
+    "Implement consensus engine output so the report can compare current price, average target and median target.",
+    "Add broker count filter so single-broker names are visually separated from consensus names.",
+    "Keep manual approval on until KAP, macro and consensus checks are wired into the pipeline."
   ]
 }

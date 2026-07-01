@@ -1,0 +1,44 @@
+{
+  "queue_id": "queue-798ce92a8105",
+  "queue_date": "2026-07-01",
+  "message_type": "DAILY_PREMARKET_DRAFT",
+  "message_body_markdown": "Gunluk Degerleme Radari | 2026-06-30 | Taslak\n\nKapsam: 1 kurum raporu, 42 gecerli satir, 0 manuel kontrol kaydi.\n\nBugun kontrol edilen kaynaklar\n- OYAK Yatirim | Nerede: https://www.oyakyatirim.com.tr/arastirma-raporlari | Ne kontrol edilir: Latest valuation table PDF | Siklik: per release\n- KAP | Nerede: https://kap.org.tr/en | Ne kontrol edilir: Material events, financial statements, corporate actions | Siklik: intraday\n- Borsa Istanbul | Nerede: https://www.borsaistanbul.com/en/markets/equity-market | Ne kontrol edilir: Equity market, sector flow and daily bulletin | Siklik: intraday\n- TCMB | Nerede: https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB%2BEN/Main%2BMenu/Statistics | Ne kontrol edilir: Data release calendar, rates, exchange rates and markets data | Siklik: daily\n- TUIK | Nerede: https://veriportali.tuik.gov.tr/en | Ne kontrol edilir: Inflation, industrial production and confidence releases | Siklik: calendar-driven\n\nPiyasa baglami\n- Consensus expectations | Neden onemli: Prices embed expectations, so the report should show whether the narrative is optimistic or pessimistic. | Kontrol yeri: Research tabs, broker revisions and market prices\n- Macro rates and FX | Neden onemli: Valuation multiples and risk appetite are sensitive to policy rate and TRY moves. | Kontrol yeri: TCMB statistics and exchange-rate pages\n- Sector rotation and liquidity | Neden onemli: Top names move differently from thin names; liquidity and float should affect ranking. | Kontrol yeri: Borsa Istanbul equity market and indices pages\n- Corporate events | Neden onemli: KAP disclosures can invalidate a target-price assumption very quickly. | Kontrol yeri: KAP material event disclosures\n\nOne cikan izleme adaylari\n- ALBRK | 1 kurum | Ort. hedef: 13.85 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30\n- ISMEN | 1 kurum | Ort. hedef: 71.4 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30\n- PGSUS | 1 kurum | Ort. hedef: 342.0 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30\n- HTTBT | 1 kurum | Ort. hedef: 68.64 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30\n- GLRMK | 1 kurum | Ort. hedef: 326.4 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30\n\nAnomali / ayrisma uyarilari\n- ALBRK icin tek kurumdan gelen %71 pozitif ayrisma, manuel kontrol gerekir.\n- ISMEN icin tek kurumdan gelen %98 pozitif ayrisma, manuel kontrol gerekir.\n- PGSUS icin tek kurumdan gelen %95 pozitif ayrisma, manuel kontrol gerekir.\n- HTTBT icin tek kurumdan gelen %75 pozitif ayrisma, manuel kontrol gerekir.\n- GLRMK icin tek kurumdan gelen %90 pozitif ayrisma, manuel kontrol gerekir.\n\nRevizyon momentumu\n- Dikkat gerektiren yeni revizyon serisi yok.\n\nManuel kontrol gerektirenler\n- Manuel kontrol kuyrugunda acik kritik kayit yok.\n\nBugun atilacak aksiyonlar\n- Implement consensus engine output so the report can compare current price, average target and median target.\n- Add broker count filter so single-broker names are visually separated from consensus names.\n- Keep manual approval on until KAP, macro and consensus checks are wired into the pipeline.\n\nBu icerik yatirim tavsiyesi degildir. Otomatik veri analizi ve genel piyasa taramasidir. Nihai karar kullaniciya aittir.",
+  "approval_status": "PENDING",
+  "approval_notes": [
+    "primary=PENDING:AI reviewer not configured.",
+    "secondary=PENDING:AI reviewer not configured."
+  ],
+  "compliance_check_status": "PASS",
+  "source_count": 1,
+  "primary_review": {
+    "role": "primary",
+    "provider": "unset",
+    "model": "unset",
+    "status": "PENDING",
+    "summary": "AI reviewer not configured.",
+    "confidence": 0.0,
+    "reasons": [
+      "AI_REVIEW_NOT_CONFIGURED"
+    ],
+    "risks": [
+      "NO_MODEL_ENDPOINT"
+    ]
+  },
+  "secondary_review": {
+    "role": "secondary",
+    "provider": "unset",
+    "model": "unset",
+    "status": "PENDING",
+    "summary": "AI reviewer not configured.",
+    "confidence": 0.0,
+    "reasons": [
+      "AI_REVIEW_NOT_CONFIGURED"
+    ],
+    "risks": [
+      "NO_MODEL_ENDPOINT"
+    ]
+  },
+  "telegram_delivery_mode": "APPROVAL_QUEUE_ONLY",
+  "send_reason": "not_approved_or_queue_only",
+  "created_at": "2026-07-01T17:55:20Z"
+}

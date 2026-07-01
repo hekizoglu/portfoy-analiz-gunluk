@@ -95,8 +95,29 @@ Validation kurallari:
 ## Field normalization rules
 - `recommendation_raw` kaynak metindir; degistirilmez
 - `recommendation_normalized` kontrollu sozlukten gelir: `BUY`, `HOLD`, `SELL`, `OUTPERFORM`, `UNDERPERFORM`, `NEUTRAL`
+- Normalize akisi broker-aware calisir: once kaynak-ozel varyant, sonra aile seviyesinde fallback, sonra canonical esleme uygulanir
+- Bilinmeyen tavsiye metni `MANUAL_REVIEW` tetikler; sessizce varsayim yapilmaz
+- Kaynak ham degeri `recommendation_raw` olarak korunur; normalize deger consensus ve scoring icin kullanilir
+- Broker / kaynak varyant ornekleri:
+  - OYAK: `AL`, `EÜ`, `EP`, `EA`, `GG`
+  - Is Yatirim: `AL`, `TUT`, `SAT`, `END.USTU`, `END.PAR`, `END.ALTI`
+  - Ak Yatirim: `AL`, `TUT`, `SAT`, `ENDEKS UZERI`, `ENDEKSE PARALEL`, `ENDEKS ALTI`
 - Para birimi yoksa `TRY` varsayma; `MANUAL_REVIEW` isaretle
 - Yuzde alanlari `numeric_percent` olarak saklanir, `%` sembolu tutulmaz
+
+## Broker recommendation normalization dictionary
+Asagidaki kurallar kaynak bazinda normalizasyon sözlugunun nasil calistigini tanimlar:
+
+- `recommendation_map` tek bir dosyada veya merkezi modulde tutulur
+- `recommendation_map` source family bazinda versiyonlanir
+- `recommendation_raw` aynen saklanir
+- `recommendation_normalized` yalnizca kontrollu sozlukten gelir
+- `UNKNOWN` ya da eslesmeyen varyantlarda publish yerine `MANUAL_REVIEW` kullanilir
+- `BUY` sinifi pozitif yonlu tavsiyeleri kapsar
+- `HOLD` sinifi tarafsiz / bekle tavsiyelerini kapsar
+- `SELL` sinifi negatif yonlu tavsiyeleri kapsar
+- `NEUTRAL` sinifi endekse paralel / tarafsiz sinyalleri kapsar
+- `OUTPERFORM` ve `UNDERPERFORM` daha guclu relatif sinyalleri temsil eder
 
 ## Confidence score model
 Toplam score 0-1 araligindadir ve su sinyallerle hesaplanir:

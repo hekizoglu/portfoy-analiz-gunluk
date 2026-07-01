@@ -74,6 +74,65 @@ def main() -> int:
         "anomalies": anomalies,
         "revisions": [],
         "manual_reviews": manual_reviews,
+        "source_snapshot": [
+            {
+                "name": "OYAK Yatirim",
+                "where": "https://www.oyakyatirim.com.tr/arastirma-raporlari",
+                "check": "Latest valuation table PDF",
+                "cadence": "per release",
+            },
+            {
+                "name": "KAP",
+                "where": "https://kap.org.tr/en",
+                "check": "Material events, financial statements, corporate actions",
+                "cadence": "intraday",
+            },
+            {
+                "name": "Borsa Istanbul",
+                "where": "https://www.borsaistanbul.com/en/markets/equity-market",
+                "check": "Equity market, sector flow and daily bulletin",
+                "cadence": "intraday",
+            },
+            {
+                "name": "TCMB",
+                "where": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB%2BEN/Main%2BMenu/Statistics",
+                "check": "Data release calendar, rates, exchange rates and markets data",
+                "cadence": "daily",
+            },
+            {
+                "name": "TUIK",
+                "where": "https://veriportali.tuik.gov.tr/en",
+                "check": "Inflation, industrial production and confidence releases",
+                "cadence": "calendar-driven",
+            },
+        ],
+        "market_context": [
+            {
+                "theme": "Consensus expectations",
+                "why": "Prices embed expectations, so the report should show whether the narrative is optimistic or pessimistic.",
+                "where": "Research tabs, broker revisions and market prices",
+            },
+            {
+                "theme": "Macro rates and FX",
+                "why": "Valuation multiples and risk appetite are sensitive to policy rate and TRY moves.",
+                "where": "TCMB statistics and exchange-rate pages",
+            },
+            {
+                "theme": "Sector rotation and liquidity",
+                "why": "Top names move differently from thin names; liquidity and float should affect ranking.",
+                "where": "Borsa Istanbul equity market and indices pages",
+            },
+            {
+                "theme": "Corporate events",
+                "why": "KAP disclosures can invalidate a target-price assumption very quickly.",
+                "where": "KAP material event disclosures",
+            },
+        ],
+        "next_actions": [
+            "Implement consensus engine output so the report can compare current price, average target and median target.",
+            "Add broker count filter so single-broker names are visually separated from consensus names.",
+            "Keep manual approval on until KAP, macro and consensus checks are wired into the pipeline.",
+        ],
     }
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)

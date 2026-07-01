@@ -1,0 +1,9 @@
+{
+  "error_code": "CYCLE_WARNING",
+  "source_name": "run_cycle",
+  "severity": "WARN",
+  "requires_manual_review": true,
+  "message": "Cycle finished with a blocker or unresolved review state.",
+  "details": "AI_REVIEW_PENDING_OR_MISSING",
+  "timestamp": "2026-07-01T21:22:24Z"
+}

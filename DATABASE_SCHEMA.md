@@ -82,13 +82,22 @@ Her yeni veri varligi veya alan degisikliginde guncellenir.
 - Purpose: tavsiye sozluk eslemesi ve varyant yonetimi
 - Fields:
   - `recommendation_map_id` UUID
+  - `broker_family` string
   - `broker` string
+  - `source_subtype` string nullable
   - `recommendation_raw` string
   - `recommendation_normalized` string
+  - `map_version` string
+  - `updated_at` datetime
   - `is_active` boolean
 - Primary key: `recommendation_map_id`
-- Important indexes: `(broker, recommendation_raw)`
-- Validation rules: normalized alan kontrollu sozlukten gelmeli
+- Important indexes: `(broker_family, broker, recommendation_raw)`, `(broker, source_subtype)`
+- Validation rules:
+  - normalized alan kontrollu sozlukten gelmeli
+  - `broker_family` source ailesini temsil etmeli
+  - `recommendation_raw` source metnini bozmadan saklamali
+  - `map_version` semantik degisikliklerde artirilmalidir
+  - ayni `(broker, source_subtype, recommendation_raw)` icin tek aktif kayit olmali
 
 ## Table: stock_master
 - Purpose: temel hisse referans tablosu

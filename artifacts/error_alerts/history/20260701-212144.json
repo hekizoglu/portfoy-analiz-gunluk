@@ -1,0 +1,9 @@
+{
+  "error_code": "CYCLE_WARNING",
+  "source_name": "run_cycle",
+  "severity": "ERROR",
+  "requires_manual_review": true,
+  "message": "Cycle finished with a blocker or unresolved review state.",
+  "details": "PARSE_FAILED: Traceback (most recent call last):\n  File \"C:\\Users\\hekizoglu\\Documents\\gunluk-degerleme-borsa\\portfoy-analiz-gunluk\\scripts\\parse_oyak_pdf.py\", line 12, in <module>\n    from app.oyak_parser import parse_oyak_pdf\n  File \"C:\\Users\\hekizoglu\\Documents\\gunluk-degerleme-borsa\\portfoy-analiz-gunluk\\app\\oyak_parser.py\", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named 'pdfplumber'",
+  "timestamp": "2026-07-01T21:21:44Z"
+}

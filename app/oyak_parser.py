@@ -8,26 +8,20 @@ import re
 
 import pdfplumber
 
+from app.recommendation_normalizer import normalize_recommendation
+
 
 TICKER_RE = re.compile(r"^[A-Z0-9]{4,5}$")
 
-RECOMMENDATION_MAP = {
-    "EÜ": "BUY",
-    "EÃœ": "BUY",
-    "EP": "HOLD",
-    "EA": "SELL",
-    "GG": "NEUTRAL",
-}
-
 MISENCODED_MAP = {
-    "BankacÄ±lÄ±k": "Bankacilik",
-    "SigortacÄ±lÄ±k": "Sigortacilik",
-    "AracÄ± Kurum": "Araci Kurum",
-    "HavacÄ±lÄ±k": "Havacilik",
-    "Yiyecek & Ä°Ã§ecek": "Yiyecek & Icecek",
-    "SaÄŸlÄ±k": "Saglik",
-    "Gayrimenkul & Ä°nÅŸaat": "Gayrimenkul & Insaat",
-    "TelekomÃ¼nikasyon": "Telekomunikasyon",
+    "BankacÃ„Â±lÃ„Â±k": "Bankacilik",
+    "SigortacÃ„Â±lÃ„Â±k": "Sigortacilik",
+    "AracÃ„Â± Kurum": "Araci Kurum",
+    "HavacÃ„Â±lÃ„Â±k": "Havacilik",
+    "Yiyecek & Ã„Â°ÃƒÂ§ecek": "Yiyecek & Icecek",
+    "SaÃ„Å¸lÃ„Â±k": "Saglik",
+    "Gayrimenkul & Ã„Â°nÃ…Å¸aat": "Gayrimenkul & Insaat",
+    "TelekomÃƒÂ¼nikasyon": "Telekomunikasyon",
 }
 
 
@@ -64,7 +58,7 @@ def _extract_report_date(text: str) -> str:
 
 
 def _clean_sector(raw: str) -> str:
-    sector = raw.split(" Kapanış Hedef Fiyat", 1)[0].replace("*", "").strip()
+    sector = raw.split(" KapanÄ±ÅŸ Hedef Fiyat", 1)[0].replace("*", "").strip()
     return MISENCODED_MAP.get(sector, sector)
 
 
@@ -96,12 +90,14 @@ def parse_oyak_pdf(pdf_path: Path, source_url: str) -> list[dict]:
 
         if not first:
             continue
-        if "Kapanış Hedef Fiyat" in first and not TICKER_RE.match(first.split()[0]):
+        if "KapanÄ±ÅŸ Hedef Fiyat" in first and not TICKER_RE.match(first.split()[0]):
             current_sector = _clean_sector(first)
             continue
         if not TICKER_RE.match(first):
             continue
-        if second not in RECOMMENDATION_MAP or not third or not fifth:
+
+        recommendation_normalized = normalize_recommendation("OYAK Yatirim", second)
+        if recommendation_normalized is None or not third or not fifth:
             continue
 
         current_price, target_price = _parse_price_pair(third)
@@ -112,7 +108,7 @@ def parse_oyak_pdf(pdf_path: Path, source_url: str) -> list[dict]:
             broker="OYAK Yatirim",
             report_date=report_date,
             recommendation_raw=second,
-            recommendation_normalized=RECOMMENDATION_MAP[second],
+            recommendation_normalized=recommendation_normalized,
             current_price_reported=current_price,
             target_price=target_price,
             upside_reported=upside,

@@ -47,6 +47,7 @@ class TelegramConfig:
     chat_id: str
     progress_thread_id: str
     parse_mode: str
+    delivery_mode: str
 
     @classmethod
     def from_env(cls, base_dir: Path | None = None) -> "TelegramConfig":
@@ -57,6 +58,7 @@ class TelegramConfig:
             chat_id=data.get("TELEGRAM_CHAT_ID", ""),
             progress_thread_id=data.get("TELEGRAM_PROGRESS_THREAD_ID", ""),
             parse_mode=data.get("TELEGRAM_PARSE_MODE", "Markdown"),
+            delivery_mode=data.get("TELEGRAM_DELIVERY_MODE", "APPROVAL_QUEUE_ONLY").strip().upper(),
         )
 
     def validate_for_send(self) -> None:
@@ -66,6 +68,18 @@ class TelegramConfig:
             raise ValueError("Missing TELEGRAM_BOT_TOKEN.")
         if not self.chat_id:
             raise ValueError("Missing TELEGRAM_CHAT_ID.")
+
+    def is_private_test(self) -> bool:
+        return self.delivery_mode == "PRIVATE_TEST"
+
+    def is_approved_send(self) -> bool:
+        return self.delivery_mode == "APPROVED_SEND"
+
+    def is_queue_only(self) -> bool:
+        return self.delivery_mode == "APPROVAL_QUEUE_ONLY"
+
+    def is_dry_run(self) -> bool:
+        return self.delivery_mode == "DRY_RUN"
 
 
 @dataclass(slots=True)

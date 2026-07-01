@@ -1,7 +1,7 @@
 [
   {
     "ticker": "AKBNK",
-    "sector": "Bankacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -18,7 +18,7 @@
   },
   {
     "ticker": "ALBRK",
-    "sector": "Bankacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -35,7 +35,7 @@
   },
   {
     "ticker": "GARAN",
-    "sector": "Bankacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -52,7 +52,7 @@
   },
   {
     "ticker": "ISCTR",
-    "sector": "Bankacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -69,7 +69,7 @@
   },
   {
     "ticker": "YKBNK",
-    "sector": "Bankacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -86,7 +86,7 @@
   },
   {
     "ticker": "AGESA",
-    "sector": "Sigortacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -103,7 +103,7 @@
   },
   {
     "ticker": "ANHYT",
-    "sector": "Sigortacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -120,7 +120,7 @@
   },
   {
     "ticker": "ANSGR",
-    "sector": "Sigortacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -137,7 +137,7 @@
   },
   {
     "ticker": "TURSG",
-    "sector": "Sigortacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -154,7 +154,7 @@
   },
   {
     "ticker": "ISMEN",
-    "sector": "Aracı Kurum",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -171,7 +171,7 @@
   },
   {
     "ticker": "PGSUS",
-    "sector": "Havacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -188,7 +188,7 @@
   },
   {
     "ticker": "TAVHL",
-    "sector": "Havacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -205,7 +205,7 @@
   },
   {
     "ticker": "THYAO",
-    "sector": "Havacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -222,7 +222,7 @@
   },
   {
     "ticker": "HTTBT",
-    "sector": "Havacılık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -239,7 +239,7 @@
   },
   {
     "ticker": "DOAS",
-    "sector": "Otomotiv",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -256,7 +256,7 @@
   },
   {
     "ticker": "FROTO",
-    "sector": "Otomotiv",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -273,7 +273,7 @@
   },
   {
     "ticker": "TOASO",
-    "sector": "Otomotiv",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -290,7 +290,7 @@
   },
   {
     "ticker": "TTRAK",
-    "sector": "Otomotiv",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -307,7 +307,7 @@
   },
   {
     "ticker": "DOHOL",
-    "sector": "Holdingler",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -324,7 +324,7 @@
   },
   {
     "ticker": "KCHOL",
-    "sector": "Holdingler",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -341,7 +341,7 @@
   },
   {
     "ticker": "SAHOL",
-    "sector": "Holdingler",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -358,7 +358,7 @@
   },
   {
     "ticker": "ASELS",
-    "sector": "Savunma",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -375,7 +375,7 @@
   },
   {
     "ticker": "OTKAR",
-    "sector": "Savunma",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -392,7 +392,7 @@
   },
   {
     "ticker": "AKSEN",
-    "sector": "Enerji",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -409,7 +409,7 @@
   },
   {
     "ticker": "ASTOR",
-    "sector": "Enerji",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -426,7 +426,7 @@
   },
   {
     "ticker": "GWIND",
-    "sector": "Enerji",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -443,7 +443,7 @@
   },
   {
     "ticker": "IZENR",
-    "sector": "Enerji",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -460,7 +460,7 @@
   },
   {
     "ticker": "CCOLA",
-    "sector": "Yiyecek & İçecek",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -477,7 +477,7 @@
   },
   {
     "ticker": "TABGD",
-    "sector": "Yiyecek & İçecek",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -494,7 +494,7 @@
   },
   {
     "ticker": "SISE",
-    "sector": "Cam",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -511,7 +511,7 @@
   },
   {
     "ticker": "MPARK",
-    "sector": "Sağlık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -528,7 +528,7 @@
   },
   {
     "ticker": "SELEC",
-    "sector": "Sağlık",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EP",
@@ -545,7 +545,7 @@
   },
   {
     "ticker": "GLRMK",
-    "sector": "Gayrimenkul & İnşaat",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -562,7 +562,7 @@
   },
   {
     "ticker": "KLKIM",
-    "sector": "Gayrimenkul & İnşaat",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -579,7 +579,7 @@
   },
   {
     "ticker": "AVPGY",
-    "sector": "Gayrimenkul & İnşaat",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -596,7 +596,7 @@
   },
   {
     "ticker": "TRGYO",
-    "sector": "Gayrimenkul & İnşaat",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -613,7 +613,7 @@
   },
   {
     "ticker": "PSGYO",
-    "sector": "Gayrimenkul & İnşaat",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -630,7 +630,7 @@
   },
   {
     "ticker": "BIMAS",
-    "sector": "Perakende",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -647,7 +647,7 @@
   },
   {
     "ticker": "MAVI",
-    "sector": "Perakende",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -664,7 +664,7 @@
   },
   {
     "ticker": "MGROS",
-    "sector": "Perakende",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -681,7 +681,7 @@
   },
   {
     "ticker": "TCELL",
-    "sector": "Telekomünikasyon",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
@@ -698,7 +698,7 @@
   },
   {
     "ticker": "INDES",
-    "sector": "Teknoloji",
+    "sector": "",
     "broker": "OYAK Yatirim",
     "report_date": "2026-06-30",
     "recommendation_raw": "EÜ",
