@@ -84,6 +84,9 @@ def send_error_alert_if_enabled(alert: ErrorAlert, root: Path) -> str:
     if not cfg.enabled or not cfg.bot_token or not cfg.chat_id:
         return "SKIPPED_MISSING_CONFIG"
 
-    client = TelegramClient(cfg)
-    client.send_markdown(alert.to_markdown())
-    return "SENT"
+    try:
+        client = TelegramClient(cfg)
+        client.send_markdown(alert.to_markdown())
+        return "SENT"
+    except Exception as exc:
+        return f"FAILED_{type(exc).__name__}"
