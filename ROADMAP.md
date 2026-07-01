@@ -158,6 +158,90 @@ Her sprint sonunda yalnizca etkilenen gorevin durumu guncellenir.
 - Risk notes: Format ve erisim belirsiz olabilir.
 - Next task: `P2-T02`
 
+### Task P2-T02
+- ID: `P2-T02`
+- Title: Add Ak Yatirim source design
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `DATA_SOURCES.md`, `docs/templates/source_adapter_template.md`
+- Output files: `DATA_SOURCES.md`, `docs/source_adapters/ak_yatirim_model_portfoy.md`
+- Acceptance criteria: Ak Yatirim kaynagi icin adapter tasarimi eklenmis olmali.
+- Risk notes: Format ve erisim belirsiz olabilir.
+- Next task: `P2-T03`
+
+### Task P2-T03
+- ID: `P2-T03`
+- Title: Add broker recommendation normalization dictionary
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `PARSING_RULES.md`, `DATABASE_SCHEMA.md`
+- Output files: `PARSING_RULES.md`, `DATABASE_SCHEMA.md`
+- Acceptance criteria: Broker bazli tavsiye map kurallari yazili olmali.
+- Risk notes: Broker terminolojileri farkli olabilir.
+- Next task: `P2-T04`
+
+### Task P2-T04
+- ID: `P2-T04`
+- Title: Add consensus target price engine
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `CONSENSUS_ENGINE.md`, `SCORING.md`
+- Output files: `CONSENSUS_ENGINE.md`, `SCORING.md`
+- Acceptance criteria: Ortalama, medyan ve agirlikli consensus mantigi tanimli olmali.
+- Risk notes: Tek broker verisinde sahte kesinlik riski.
+- Next task: `P2-T05`
+
+### Task P2-T05
+- ID: `P2-T05`
+- Title: Add broker count filter
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `SCORING.md`, `TELEGRAM_FORMAT.md`
+- Output files: `SCORING.md`, `TELEGRAM_FORMAT.md`
+- Acceptance criteria: Dusuk broker sayisinda rapor dilini yumusatan kural tanimli olmali.
+- Risk notes: Tek broker verisi yanlis one cikabilir.
+- Next task: `P2-T06`
+
+### Task P2-T06
+- ID: `P2-T06`
+- Title: Add new/removed coverage detection
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `ANOMALY_DETECTION.md`, `DATABASE_SCHEMA.md`
+- Output files: `ANOMALY_DETECTION.md`, `DATABASE_SCHEMA.md`
+- Acceptance criteria: Yeni coverage ve coverage kaldirma mantigi tanimli olmali.
+- Risk notes: Tarihsel kaynak eksigi yalanci sinyal uretebilir.
+- Next task: `P2-T07`
+
+### Task P2-T07
+- ID: `P2-T07`
+- Title: Add institution comparison report
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `CONSENSUS_ENGINE.md`, `TELEGRAM_FORMAT.md`
+- Output files: `CONSENSUS_ENGINE.md`, `TELEGRAM_FORMAT.md`
+- Acceptance criteria: Kurumlar arasi fark raporu formatı yazili olmali.
+- Risk notes: Fazla gurultu kullanici okunurlugunu bozar.
+- Next task: `P2-T08`
+
+### Task P2-T08
+- ID: `P2-T08`
+- Title: Add anomaly/divergence detection
+- Phase: `Phase 2`
+- Status: `TODO`
+- Estimated sprint count: `1`
+- Input files: `ANOMALY_DETECTION.md`, `SCORING.md`
+- Output files: `ANOMALY_DETECTION.md`, `SCORING.md`
+- Acceptance criteria: Pozitif/negatif divergence detection mantigi yazili olmali.
+- Risk notes: Consensus yoksa divergence anlamsiz kalir.
+- Next task: `P3-T01`
+
 ## Phase 3 - KAP + Technical + Risk Filters
 ### Task P3-T01
 - ID: `P3-T01`

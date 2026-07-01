@@ -22,12 +22,11 @@ Runtime komutlari netlestikce guncellenir.
 2026-06-30
 
 ## Placeholder command loop
-1. `python -m scripts.pull_sources`
-2. `python -m scripts.parse_reports`
-3. `python -m scripts.validate_rows`
-4. `python -m scripts.compute_scores`
-5. `python -m scripts.build_telegram_draft`
-6. `python -m scripts.send_telegram --dry-run`
+1. `python scripts/fetch_latest_oyak_pdf.py`
+2. `python scripts/parse_oyak_pdf.py --input artifacts/raw/oyak_latest.pdf`
+3. `python scripts/build_daily_report_from_oyak.py --input artifacts/oyak_parsed_rows.json --output artifacts/daily_report_data.json`
+4. `python scripts/build_telegram_draft.py --input artifacts/daily_report_data.json --output artifacts/daily_report_draft.md`
+5. `python scripts/send_telegram.py --dry-run --input artifacts/daily_report_draft.md`
 
 ## Parser test rules
 - Her sample source icin en az bir golden output

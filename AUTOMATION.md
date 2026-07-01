@@ -34,6 +34,8 @@ Pipeline step'leri veya zamanlama degistikce guncellenir.
 - Cycle runner: `scripts/run_cycle.py`
 - Telegram cycle report: config varsa her cycle sonunda gonderilir
 - Commit/push: dosya degisti ise her cycle sonunda denenir
+- GitHub Actions workflow: `.github/workflows/roadmap_loop.yml`
+- GitHub Actions path'i repo secrets kullanarak yerel `.env.local` ihtiyacini ortadan kaldirir
 
 ## DeepSeek off-peak schedule (Turkey time)
 Kullanici tarafindan verilen fiyat bilgisine gore DeepSeek peak saatleri TRT ile:
@@ -55,6 +57,12 @@ Eger `AI_TASK_RUNNER_PROVIDER=deepseek` ve `DEEPSEEK_OFFPEAK_ONLY=true` ise:
 - `09:15` pre-market Telegram draft
 - `18:15` close-price refresh
 - `18:30` closing update draft
+
+## Live user-data path
+- Varsayilan canli path: OYAK arastirma sayfasindan en guncel `degerleme-tablosu-*.pdf` dosyasini indir
+- `scripts/fetch_latest_oyak_pdf.py` resmi sayfadan PDF linkini bulur
+- `scripts/run_cycle.py` PDF path verilmezse bu fetch adimini otomatik cagirir
+- GitHub Actions cron bu canli path'i kullanir
 
 ## MVP pipeline command plan
 1. `pull_sources`

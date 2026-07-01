@@ -55,14 +55,30 @@ def main() -> int:
     pipeline_status = "SKIPPED_NO_PDF"
     draft_status = "SKIPPED"
 
+    pdf_input = args.pdf
+
     if ai_cfg.provider == "deepseek" and not ai_cfg.should_run_now():
         pipeline_status = "SKIPPED_DEEPSEEK_PEAK_WINDOW"
         draft_status = "SKIPPED_PRICING_WINDOW"
-    elif args.pdf:
+    else:
+        if not pdf_input:
+            code, stdout, stderr = _run(
+                "scripts/fetch_latest_oyak_pdf.py",
+                "--output",
+                "artifacts/raw/oyak_latest.pdf",
+            )
+            if code != 0:
+                pipeline_status = f"FETCH_FAILED: {stderr or stdout}"
+            else:
+                pdf_input = "artifacts/raw/oyak_latest.pdf"
+
+    if pipeline_status.startswith("FETCH_FAILED"):
+        draft_status = "FAILED"
+    elif pdf_input and pipeline_status != "SKIPPED_DEEPSEEK_PEAK_WINDOW":
         code, stdout, stderr = _run(
             "scripts/parse_oyak_pdf.py",
             "--input",
-            args.pdf,
+            pdf_input,
             "--source-url",
             args.source_url,
         )
@@ -97,13 +113,17 @@ def main() -> int:
     if args.send_telegram:
         cfg = TelegramConfig.from_env(ROOT)
         if cfg.enabled and cfg.bot_token and cfg.chat_id:
-            preview_report = build_cycle_report(
-                next_task_id=next_task_id,
-                pipeline_status=pipeline_status,
-                draft_status=draft_status,
-                git_status="PENDING",
-            )
-            TelegramClient(cfg).send_markdown(preview_report)
+            if pipeline_status == "OK" and (ROOT / "artifacts" / "daily_report_draft.md").exists():
+                draft_text = (ROOT / "artifacts" / "daily_report_draft.md").read_text(encoding="utf-8")
+                TelegramClient(cfg).send_markdown(draft_text)
+            else:
+                preview_report = build_cycle_report(
+                    next_task_id=next_task_id,
+                    pipeline_status=pipeline_status,
+                    draft_status=draft_status,
+                    git_status="PENDING",
+                )
+                TelegramClient(cfg).send_markdown(preview_report)
             telegram_status = "SENT"
         else:
             telegram_status = "SKIPPED_MISSING_CONFIG"
