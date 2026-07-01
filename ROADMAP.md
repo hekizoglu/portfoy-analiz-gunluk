@@ -162,7 +162,7 @@ Her sprint sonunda yalnizca etkilenen gorevin durumu guncellenir.
 - ID: `P2-T02`
 - Title: Add Ak Yatirim source design
 - Phase: `Phase 2`
-- Status: `TODO`
+- Status: `DONE`
 - Estimated sprint count: `1`
 - Input files: `DATA_SOURCES.md`, `docs/templates/source_adapter_template.md`
 - Output files: `DATA_SOURCES.md`, `docs/source_adapters/ak_yatirim_model_portfoy.md`

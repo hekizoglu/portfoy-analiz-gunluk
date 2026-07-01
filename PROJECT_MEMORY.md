@@ -22,13 +22,13 @@ Her sprint sonunda yalnizca gecerli durum guncellenir.
 2026-06-30
 
 ## Current project state
-Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamlandi: OYAK source adapter, parser/validation kurallari, canonical veri modeli, Google Sheets MVP semasi, scoring, Telegram manuel approval formati, error/manual review queue, gunluk pipeline komut plani ve progress notification tasarimi hazir. Git deposu baslatildi. Telegram entegrasyonu icin secret-safe konfigurasyon iskeleti eklendi; varsayilan test grup chat ID'si repoya islendi. Shell-bagimsiz universal config standardi tanimlandi. Gercek OYAK PDF'sinden 42 satir parse eden runtime script eklendi, gunluk rapor JSON'u ve Telegram draft'i uretildi, dry-run dogrulandi. Phase 2 icin ikinci broker olarak Is Yatirim source adapter tasarimi eklendi. DeepSeek icin TRT bazli peak/off-peak pricing pencereleri config ve scheduler katmanina eklendi. Canli OYAK PDF fetcheri ve GitHub Actions cron loop'u eklendi; repo secrets ile yerel secret gorunurlugu olmadan da canli veri akisi calisabilir.
+Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamlandi: OYAK source adapter, parser/validation kurallari, canonical veri modeli, Google Sheets MVP semasi, scoring, Telegram manuel approval formati, error/manual review queue, gunluk pipeline komut plani ve progress notification tasarimi hazir. Git deposu baslatildi. Telegram entegrasyonu icin secret-safe konfigurasyon iskeleti eklendi; varsayilan test grup chat ID'si repoya islendi. Shell-bagimsiz universal config standardi tanimlandi. Gercek OYAK PDF'sinden 42 satir parse eden runtime script eklendi, gunluk rapor JSON'u ve Telegram draft'i uretildi, dry-run dogrulandi. Phase 2 icin Is Yatirim ve Ak Yatirim source adapter tasarimlari eklendi. DeepSeek icin TRT bazli peak/off-peak pricing pencereleri config ve scheduler katmanina eklendi. Canli OYAK PDF fetcheri ve GitHub Actions cron loop'u eklendi; repo secrets ile yerel secret gorunurlugu olmadan da canli veri akisi calisabilir. Yerel `.env.local` ile Telegram test gonderimi acildi.
 
 ## Current phase
 `Phase 2 - Multi-Broker Consensus`
 
 ## Current sprint
-`P2-T01` tamamlandi.
+`P2-T02` tamamlandi.
 
 ## Current assumptions
 - Kaynak tasarimi bu sprintte canli site baglantisi kurmadan yapildi.
@@ -42,7 +42,7 @@ Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamla
 - Telegram gercek gonderimini `.env.local` veya aktif env ile dogrulamak
 - Sheets veya lokal kalici katmana queue yazimi eklemek
 - Tek kurum verisinden uretilen draft icin daha muhafazakar ranking/filtre eklemek
-- Is Yatirim ve Ak Yatirim kaynaklarini parser katmanina hazirlamak
+- Broker normalization dictionary ve consensus engine iskeletini eklemek
 
 ## Known risks
 - OYAK formati canli dogrulama yapilmadan kesinlestirilemez.
@@ -50,9 +50,10 @@ Minimum dokumantasyon kontrol sistemi kuruldu. Phase 1 tasarim gorevleri tamamla
 - Lisans/ToS incelemesi canli entegrasyon oncesi zorunlu.
 - Telegram token ve hedef chat yanlis yonetilirse secret ve itibar riski dogar.
 - Bu shell oturumunda Telegram env veya `.env.local` gorunmedigi icin canli test gonderimi bloke.
+- Yerel Telegram testi 401 Unauthorized verdi; mevcut token rotate gerektiriyor olabilir.
 
 ## Next task ID
-`P2-T02`
+`P2-T03`
 
 ## Do-not-change list
 - Bu sistem yatirim tavsiyesi urunu gibi konumlandirilmayacak.

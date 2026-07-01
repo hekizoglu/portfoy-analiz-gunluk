@@ -85,12 +85,29 @@ Login-protected, ucretli veya yetki gerektiren veriler; kullanici yasal erisim v
 
 ### Ak Yatirim model portfoy
 - Source name: `Ak Yatirim model portfoy`
-- Type: `PDF/HTML`
-- Access method: Sonraki fazda arastirilacak
-- Authentication requirement: `Unknown`
+- Type: `PDF/HTML/XLSX bulletin`
+- Access method: Kamuya acik model portfoy veya arastirma sayfasindan HTML icerik ya da indirilebilir dosya varsayimi; canli entegrasyon oncesi resmi URL pattern dogrulanmali.
+- Authentication requirement: `None assumed for public research pages`
 - Parsing difficulty: `Medium`
-- Reliability: `Unknown`
-- Update frequency: `Unknown`
-- Legal/ToS risk: `Unknown`
-- Required fields: MVP sonrasi tanimlanacak
+- Reliability: `Medium-High if official page and file hash are archived`
+- Update frequency: `Weekly or report-driven`
+- Legal/ToS risk: `Medium` - resmi yayin ve kullanim kosullari canli entegrasyon oncesi kontrol edilmeli.
+- Required fields:
+  - `ticker`
+  - `company_name`
+  - `broker`
+  - `report_date`
+  - `recommendation_raw`
+  - `recommendation_normalized`
+  - `target_price`
+  - `current_price_reported`
+  - `upside_reported`
+  - `currency`
+  - `source_url`
+  - `source_file_hash`
 - MVP priority: `P2`
+- Adapter notes:
+  - Model portfoy ve hedef fiyat tablosu ayni kavram degil; `source_subtype` metadata'da tutulmali.
+  - PDF/XLSX varyanti varsa hash/fingerprint akisi OYAK ile uyumlu olmali.
+  - Tavsiye terimleri broker-bazli normalize edilmeli; model portfoy girisi hedef fiyat icermiyorsa consensus hattina dogrudan degil yardimci sinyal olarak alinmali.
+  - Ayni tarihli farkli belge varyantlari duplicate degil revision/layout-change olarak isaretlenmeli.

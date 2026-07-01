@@ -113,18 +113,21 @@ def main() -> int:
     if args.send_telegram:
         cfg = TelegramConfig.from_env(ROOT)
         if cfg.enabled and cfg.bot_token and cfg.chat_id:
-            if pipeline_status == "OK" and (ROOT / "artifacts" / "daily_report_draft.md").exists():
-                draft_text = (ROOT / "artifacts" / "daily_report_draft.md").read_text(encoding="utf-8")
-                TelegramClient(cfg).send_markdown(draft_text)
-            else:
-                preview_report = build_cycle_report(
-                    next_task_id=next_task_id,
-                    pipeline_status=pipeline_status,
-                    draft_status=draft_status,
-                    git_status="PENDING",
-                )
-                TelegramClient(cfg).send_markdown(preview_report)
-            telegram_status = "SENT"
+            try:
+                if pipeline_status == "OK" and (ROOT / "artifacts" / "daily_report_draft.md").exists():
+                    draft_text = (ROOT / "artifacts" / "daily_report_draft.md").read_text(encoding="utf-8")
+                    TelegramClient(cfg).send_markdown(draft_text)
+                else:
+                    preview_report = build_cycle_report(
+                        next_task_id=next_task_id,
+                        pipeline_status=pipeline_status,
+                        draft_status=draft_status,
+                        git_status="PENDING",
+                    )
+                    TelegramClient(cfg).send_markdown(preview_report)
+                telegram_status = "SENT"
+            except Exception as exc:
+                telegram_status = f"FAILED_{type(exc).__name__}"
         else:
             telegram_status = "SKIPPED_MISSING_CONFIG"
 

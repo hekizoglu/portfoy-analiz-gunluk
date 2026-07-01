@@ -40,3 +40,12 @@ Anlamli yeni hata turlerinde yeni kayit eklenir; mevcut kayit silinmez.
 - Prevention: `Kolon varyasyon sozlugu ve sample regression testi`
 - Related files: `PARSING_RULES.md`, `QA.md`
 - Status: `OPEN_TEMPLATE`
+
+- Error: `TELEGRAM_HTTP_401_UNAUTHORIZED`
+- Environment: `Local loop / Telegram send`
+- Symptoms: `sendMessage cagrisi HTTP 401 donuyor ve mesaj gitmiyor`
+- Root cause: `Bot token gecersiz, iptal edilmis veya yanlis`
+- Fix: `BotFather uzerinden yeni token olustur, .env.local veya repo secret'i guncelle`
+- Prevention: `Expose olan tokenlari rotate et; send loop'ta auth failure status'u yakala`
+- Related files: `scripts/run_cycle.py`, `app/telegram_client.py`, `TELEGRAM_INTEGRATION.md`
+- Status: `OPEN`
