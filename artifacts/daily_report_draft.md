@@ -1,4 +1,4 @@
-Gunluk Degerleme Radari | 2026-06-30 | Taslak
+Gunluk Degerleme Radari | 2026-07-01 | Taslak
 
 Kapsam: 1 kurum raporu, 42 gecerli satir, 0 manuel kontrol kaydi.
 
@@ -16,18 +16,18 @@ Piyasa baglami
 - Corporate events | Neden onemli: KAP disclosures can invalidate a target-price assumption very quickly. | Kontrol yeri: KAP material event disclosures
 
 One cikan izleme adaylari
-- ALBRK | 1 kurum | Ort. hedef: 13.85 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30
-- ISMEN | 1 kurum | Ort. hedef: 71.4 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30
-- PGSUS | 1 kurum | Ort. hedef: 342.0 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30
-- HTTBT | 1 kurum | Ort. hedef: 68.64 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30
-- GLRMK | 1 kurum | Ort. hedef: 326.4 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-06-30
+- ALBRK | 1 kurum | Ort. hedef: 13.85 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-07-01
+- ISMEN | 1 kurum | Ort. hedef: 71.4 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-07-01
+- PGSUS | 1 kurum | Ort. hedef: 342.0 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-07-01
+- HTTBT | 1 kurum | Ort. hedef: 68.64 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-07-01
+- GLRMK | 1 kurum | Ort. hedef: 326.4 TL | Kurum raporlarina gore one cikan | Skor: 100 | Risk: MANUAL_CONTROL | Kaynak tarihi: 2026-07-01
 
 Anomali / ayrisma uyarilari
-- ALBRK icin tek kurumdan gelen %71 pozitif ayrisma, manuel kontrol gerekir.
+- ALBRK icin tek kurumdan gelen %70 pozitif ayrisma, manuel kontrol gerekir.
 - ISMEN icin tek kurumdan gelen %98 pozitif ayrisma, manuel kontrol gerekir.
-- PGSUS icin tek kurumdan gelen %95 pozitif ayrisma, manuel kontrol gerekir.
-- HTTBT icin tek kurumdan gelen %75 pozitif ayrisma, manuel kontrol gerekir.
-- GLRMK icin tek kurumdan gelen %90 pozitif ayrisma, manuel kontrol gerekir.
+- PGSUS icin tek kurumdan gelen %94 pozitif ayrisma, manuel kontrol gerekir.
+- HTTBT icin tek kurumdan gelen %77 pozitif ayrisma, manuel kontrol gerekir.
+- GLRMK icin tek kurumdan gelen %93 pozitif ayrisma, manuel kontrol gerekir.
 
 Revizyon momentumu
 - Dikkat gerektiren yeni revizyon serisi yok.

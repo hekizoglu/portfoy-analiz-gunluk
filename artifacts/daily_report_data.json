@@ -1,5 +1,5 @@
 {
-  "report_date": "2026-06-30",
+  "report_date": "2026-07-01",
   "source_count": 1,
   "valid_row_count": 42,
   "manual_review_count": 0,
@@ -11,7 +11,7 @@
       "consensus_note": "Kurum raporlarina gore one cikan",
       "final_score": 100,
       "risk_label": "MANUAL_CONTROL",
-      "report_date": "2026-06-30"
+      "report_date": "2026-07-01"
     },
     {
       "ticker": "ISMEN",
@@ -20,7 +20,7 @@
       "consensus_note": "Kurum raporlarina gore one cikan",
       "final_score": 100,
       "risk_label": "MANUAL_CONTROL",
-      "report_date": "2026-06-30"
+      "report_date": "2026-07-01"
     },
     {
       "ticker": "PGSUS",
@@ -29,7 +29,7 @@
       "consensus_note": "Kurum raporlarina gore one cikan",
       "final_score": 100,
       "risk_label": "MANUAL_CONTROL",
-      "report_date": "2026-06-30"
+      "report_date": "2026-07-01"
     },
     {
       "ticker": "HTTBT",
@@ -38,7 +38,7 @@
       "consensus_note": "Kurum raporlarina gore one cikan",
       "final_score": 100,
       "risk_label": "MANUAL_CONTROL",
-      "report_date": "2026-06-30"
+      "report_date": "2026-07-01"
     },
     {
       "ticker": "GLRMK",
@@ -47,24 +47,24 @@
       "consensus_note": "Kurum raporlarina gore one cikan",
       "final_score": 100,
       "risk_label": "MANUAL_CONTROL",
-      "report_date": "2026-06-30"
+      "report_date": "2026-07-01"
     }
   ],
   "anomalies": [
     {
-      "message": "ALBRK icin tek kurumdan gelen %71 pozitif ayrisma, manuel kontrol gerekir."
+      "message": "ALBRK icin tek kurumdan gelen %70 pozitif ayrisma, manuel kontrol gerekir."
     },
     {
       "message": "ISMEN icin tek kurumdan gelen %98 pozitif ayrisma, manuel kontrol gerekir."
     },
     {
-      "message": "PGSUS icin tek kurumdan gelen %95 pozitif ayrisma, manuel kontrol gerekir."
+      "message": "PGSUS icin tek kurumdan gelen %94 pozitif ayrisma, manuel kontrol gerekir."
     },
     {
-      "message": "HTTBT icin tek kurumdan gelen %75 pozitif ayrisma, manuel kontrol gerekir."
+      "message": "HTTBT icin tek kurumdan gelen %77 pozitif ayrisma, manuel kontrol gerekir."
     },
     {
-      "message": "GLRMK icin tek kurumdan gelen %90 pozitif ayrisma, manuel kontrol gerekir."
+      "message": "GLRMK icin tek kurumdan gelen %93 pozitif ayrisma, manuel kontrol gerekir."
     }
   ],
   "revisions": [],
